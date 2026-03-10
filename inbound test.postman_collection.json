@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "190d214c-b9bf-4fb8-b236-04ed50ba88a6",
+		"name": "inbound test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token Call",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "XSRF-TOKEN=51b2798d-950d-45c1-85c5-8a79a74ead0a"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_secret",
+							"value": "11vt1mc23sr79gjp7ih6cjr95db8rd0tlc4kd2iumo7ofenikasl",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "53dba80h4fj09l4mvpp7cj3apr",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "write/InboundTest",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.auth.adcb.com/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"auth",
+						"adcb",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inbound test API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "XSRF-TOKEN=51b2798d-950d-45c1-85c5-8a79a74ead0a"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Data\": {\n        \"Request\": \"test\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://api.connect.adcb.com/test/v1/inbound-test",
+					"protocol": "https",
+					"host": [
+						"api",
+						"connect",
+						"adcb",
+						"com"
+					],
+					"path": [
+						"test",
+						"v1",
+						"inbound-test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
